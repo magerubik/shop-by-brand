@@ -1,0 +1,20 @@
+<?php
+/**
+ * Copyright © 2021 magerubik.com. All rights reserved.
+ * @author Magerubik Team <info@magerubik.com>
+ * @package Magerubik_Shopbybrand
+ * @var $block Magerubik\Shopbybrand\Block\Brand\BrandInformation
+ */ ?>
+
+<?php
+$_brand = $this->getBrandOfCurrentProduct();
+$block->setBrand($_brand);
+$_brandUrl = $_brand->getUrl();
+?>
+<?php if ($_brand->getOptionId()) : ?>
+<?php $label = $_brand->getData('brand_label'); ?>
+<div class="product attribute sku brand extra-attr">
+    <strong class="type"><?= __('Brand') ?></strong>
+    <div class="value"><?= $label ?></div>
+</div>
+<?php endif ?>

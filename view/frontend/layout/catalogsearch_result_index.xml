@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2021 magerubik.com. All rights reserved.
+ * @author Magerubik Team <info@magerubik.com>
+ * @package Magerubik_Shopbybrand
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+		<css src="Magerubik_All::owl-carousel/owl.carousel.min.css"/>
+    </head>
+	<body>
+		<referenceContainer name="sidebar.main">
+            <block ifconfig="magerubik_shopbybrand/brand_search_box/display_on_lsb_search_page" class="Magerubik\Shopbybrand\Block\Widget\BrandSearch" name="sidebar.brand.search" after="catalog.leftnav" template="Magerubik_Shopbybrand::brand/brand_search.phtml"/>
+			<block ifconfig="magerubik_shopbybrand/featured_brands/display_on_lsb_search_page" class="Magerubik\Shopbybrand\Block\Widget\BrandSlider" name="sidebar.brand.slider" after="-" template="Magerubik_Shopbybrand::brand/brand_slider.phtml">
+                <action method="setData">
+                    <argument name="name" xsi:type="string">featured_brands</argument>
+                    <argument name="value" xsi:type="string">1</argument>
+                </action>
+            </block>
+		</referenceContainer>
+	</body>
+</page>

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2021 magerubik.com. All rights reserved.
+ * @author Magerubik Team <info@magerubik.com>
+ * @package Magerubik_Shopbybrand
+ */
+-->
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+	<body>
+		<referenceContainer name="product.info.price">
+			<block ifconfig="magerubik_shopbybrand/product_view_page/display_brand_logo" class="Magerubik\Shopbybrand\Block\Brand\BrandInformation" name="brand.information.logo" template="Magerubik_Shopbybrand::brand/product_view_brand_logo.phtml" after="product.info.review" before="product.price.final" />
+		</referenceContainer>
+        <referenceContainer name="product.info.stock.sku">
+            <block ifconfig="magerubik_shopbybrand/product_view_page/display_brand_name" class="Magerubik\Shopbybrand\Block\Brand\BrandInformation" name="brand.information.name" template="Magerubik_Shopbybrand::brand/product_view_brand_name.phtml" after="product.info.sku" />
+        </referenceContainer>
+	</body>
+</page>

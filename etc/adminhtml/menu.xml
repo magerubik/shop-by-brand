@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Copyright © 2021 magerubik.com. All rights reserved.
+ * @author Magerubik Team <info@magerubik.com>
+ * @package Magerubik_Shopbybrand
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+	<menu>
+		<update id="Magerubik_All::menu" title="Magerubik" module="Magerubik_Shopbybrand" sortOrder="15" resource="Magerubik_All::menu"/>
+		<add id="Magerubik_Shopbybrand::shopbybrand" title="Shop by brand" module="Magerubik_Shopbybrand" parent="Magerubik_All::menu" sortOrder="11" resource="Magerubik_Shopbybrand::shopbybrand" />
+        <add id="Magerubik_Shopbybrand::manage_brands" title="Manage Brands" module="Magerubik_Shopbybrand" sortOrder="10" parent="Magerubik_Shopbybrand::shopbybrand" action="shopbybrand/index" resource="Magerubik_Shopbybrand::index" />
+		<add id="Magerubik_Shopbybrand::settings" title="Brand Settings" module="Magerubik_Shopbybrand" sortOrder="20" parent="Magerubik_Shopbybrand::shopbybrand" action="adminhtml/system_config/edit/section/magerubik_shopbybrand" resource="Magerubik_Shopbybrand::settings" />
+	</menu>
+</config>

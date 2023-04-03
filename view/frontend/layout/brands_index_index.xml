@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2021 magerubik.com. All rights reserved.
+ * @author Magerubik Team <info@magerubik.com>
+ * @package Magerubik_Shopbybrand
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+		<css src="Magerubik_All::css/bootstrap-grid.min.css"/>
+		<css src="Magerubik_All::owl-carousel/owl.carousel.min.css"/>
+    </head>
+	<body>
+        <referenceContainer name="content">
+            <block class="Magerubik\Shopbybrand\Block\Brand\AllBrands" name="all_brands" template="Magerubik_Shopbybrand::brand/all_brands.phtml">
+                <block class="Magerubik\Shopbybrand\Block\Widget\BrandSearch" name="brand_search" template="Magerubik_Shopbybrand::brand/brand_search.phtml" />
+                <block class="Magerubik\Shopbybrand\Block\Widget\BrandSlider" name="featured_brands" template="Magerubik_Shopbybrand::brand/featured_brands.phtml" />
+                <block class="Magerubik\Shopbybrand\Block\Widget\BrandSlider" name="brand_alphabet_list" template="Magerubik_Shopbybrand::widget/alphabet_list.phtml"/>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

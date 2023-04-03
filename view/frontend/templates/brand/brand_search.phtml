@@ -1,0 +1,30 @@
+<?php
+/**
+ * Copyright © 2021 magerubik.com. All rights reserved.
+ * @author Magerubik Team <info@magerubik.com>
+ * @package Magerubik_Shopbybrand
+ */
+ 
+$widget = [
+    'Magerubik_Shopbybrand/js/brands' => [
+        'magerubik.searchBrands' => [
+            'brandUrl'  => $block->getUrl('brands/index/searchBrands'),
+            'noResults' => __('No brand matches your input'),
+            'resultsS'   => __('There is %1 result.'),
+            'resultsP'   => __('There are %1 results.')
+        ]
+    ]
+];
+?>
+<div class="block hkk-block block-brands-search" data-mage-init='<?= json_encode($widget) ?>'>
+	<div class="block-title"><strong><?php echo __('Search Brands') ?></strong> <a class="sub-right" title="<?= __('All Brands'); ?>" href="<?= $block->getUrl('brands'); ?>"><i class="hkks hkk-external-link-alt"></i></a></div>
+    <div class="block-content">
+        <div class="brand-search-wrap" >
+            <div class="brand-form" data-role="brand-form">
+                <label class="search-label"></label>
+                <input data-role="brand_name" placeholder="<?= __('Type brand here') ?>" type="text" class="input-text search-input" />
+                <div data-role="list-wrap" class="list-wrap"></div>
+            </div>
+        </div>
+    </div>
+</div>

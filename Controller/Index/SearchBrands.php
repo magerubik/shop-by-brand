@@ -26,6 +26,7 @@ class SearchBrands extends \Magento\Framework\App\Action\Action
         \Magento\Store\Model\StoreManagerInterface $storeManager,
         LayoutFactory $resultLayoutFactory,
         \Magerubik\Shopbybrand\Model\BrandFactory $brandFactory,
+		\Magento\Framework\View\Asset\Repository $assetRepository,
         \Magerubik\Shopbybrand\Helper\Data $helper
     ) {
         parent::__construct($context);
@@ -37,6 +38,7 @@ class SearchBrands extends \Magento\Framework\App\Action\Action
         $this->_mediaUrl = $this->_storeManager->getStore()->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA);
         $this->_imageHelper = $helper->getImageHelper();
         $this->_attributeCode = $helper->getStoreBrandCode();
+        $this->assetRepository = $assetRepository;
         $this->_viewRoute = $helper->getViewRoute();
     }
     
@@ -129,7 +131,7 @@ class SearchBrands extends \Magento\Framework\App\Action\Action
     
     public function getThumbnailImage($brand, array $options = []) {
 		if (!($brandThumb = $brand->getBrandThumbnail())) {
-			$brandThumb = 'magerubik/brand/placeholder_thumbnail.jpg';
+			return $this->assetRepository->getUrl('Magerubik_Shopbybrand/images/placeholder_thumbnail.jpg');
         }
         if (isset($options['width']) || isset($options['height'])) {
             if(!isset($options['width']))

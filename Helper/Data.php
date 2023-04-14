@@ -82,7 +82,8 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
         $brandThumb = $brand->getData($type);
         if ($type == 'brand_thumbnail') {
             if (!$brandThumb) {
-                $brandThumb = 'magerubik/brand/placeholder_thumbnail.jpg';
+				$repository = $this->_objectManager->get('Magento\Framework\View\Asset\Repository');
+				return $repository->getUrl('Magerubik_Shopbybrand/images/placeholder_thumbnail.jpg');
             }
         }
 		if ($brandThumb) {

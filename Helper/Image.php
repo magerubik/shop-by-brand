@@ -43,7 +43,7 @@ class Image extends \Magento\Framework\App\Helper\AbstractHelper
     protected $_watermarkImageOpacity = 0;
 
     protected $_cachePath = 'magerubik_cache/brand/';
-    protected $_placeholderFile = 'magerubik/brand/placeholder_thumbnail.jpg';
+    protected $_placeholderFile = 'Magerubik_Shopbybrand/images/placeholder_thumbnail.jpg';
     
     public function __construct(
         \Magento\Framework\App\Helper\Context $context,

@@ -7,8 +7,19 @@
  
 $version = \Magento\Framework\App\ObjectManager::getInstance()->get('Magento\Framework\App\ProductMetadataInterface')->getVersion();
 $isMage23 = (version_compare($version, '2.3.0', '>=') ||  version_compare($version, '2.3.0-dev', '>='));
+$isMage244 = (version_compare($version, '2.4.4', '>=') ||  version_compare($version, '2.4.4-dev', '>='));
 ?>
-<?php if ($isMage23) : ?>
+<?php if ($isMage244) : ?>
+<script>
+require.config({
+    map: {
+        '*': {
+            tinymce: 'tiny_mce_5/tinymce.min'
+        }
+    }
+});
+</script>
+<?php elseif ($isMage23) : ?>
 <script>
 require.config({
     map: {
@@ -28,7 +39,8 @@ if (typeof Magerubik == 'undefined') {
     var Magerubik = {};
 }
 Magerubik.mediaUrl = '<?php echo $mediaUrl; ?>';
-require(['jquery', 'Magerubik_Shopbybrand/js/browser'], function($) {
+require(['jquery'], function($) {
+require(['Magerubik_Shopbybrand/js/browser'], function() {
     var mediaUrl = Magerubik.mediaUrl;
     var defaultThumbnail = '<?php echo $defaultThumbnail ?>';
     window.changePreviewImage = function(obj) {
@@ -50,5 +62,6 @@ require(['jquery', 'Magerubik_Shopbybrand/js/browser'], function($) {
             $_img.attr('src', defaultThumbnail);
         }
     }
+});
 });
 </script>

@@ -63,8 +63,7 @@ class Image extends \Magerubik\Shopbybrand\Block\Adminhtml\Shopbybrand\AbstractH
 				'style' => ' display: block; margin-bottom: 10px;',
 				'onclick' => "HkkMediabrowserUtility.openDialog(this, '" . $this->getUrl('cms/wysiwyg_images/index',
 					['target_element_id' => $elementId])
-					. "', null, null,'" . $this->escapeQuote(
-						__('Upload Images'), true) . "');",
+					. "', null, null,'" . __('Upload Images') . "');",
 				'disabled' => $element->getDisabled()
 			]
 		);
